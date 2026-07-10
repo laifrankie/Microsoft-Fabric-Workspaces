@@ -1,1 +1,1 @@
-This is an auto-created file for mslearn-fabric
+This is an auto-created file for migrate
