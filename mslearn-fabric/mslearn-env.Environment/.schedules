@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/schedules/1.0.0/schema.json",
   "schedules": [
     {
-      "enabled": false,
+      "enabled": true,
       "jobType": "RunCustomLivePool",
       "configuration": {
-        "type": "Weekly",
+        "type": "Daily",
         "startDateTime": "2026-06-26T08:50:00",
         "endDateTime": "2036-06-30T21:00:00",
         "localTimeZoneId": "China Standard Time",
@@ -40,13 +40,6 @@
           "22:30",
           "23:00",
           "23:30"
-        ],
-        "weekdays": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
         ]
       }
     }
