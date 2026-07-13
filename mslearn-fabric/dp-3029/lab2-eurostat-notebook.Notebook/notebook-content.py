@@ -31,13 +31,13 @@
 
 # CELL ********************
 
-# MAGIC %%code
-# MAGIC 
-# MAGIC Download the following file from this URL:
-# MAGIC 
-# MAGIC https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/proj_23np$defaultview/?format=TSV
-# MAGIC 
-# MAGIC Then write the file to the default lakehouse into a folder named temp. Create the folder if it doesn't exist yet.
+ %%code
+    
+ Download the following file from this URL:
+    
+ https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/proj_23np$defaultview/?format=TSV
+     
+ Then write the file to the default lakehouse into a folder named temp. Create the folder if it doesn't exist yet.
 
 # METADATA ********************
 
