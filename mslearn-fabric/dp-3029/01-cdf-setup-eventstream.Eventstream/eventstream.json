@@ -1,0 +1,46 @@
+{
+  "sources": [
+    {
+      "id": "9c92ccbd-bf60-490c-be43-5368209fad26",
+      "name": "CustomEndpoint-Source",
+      "type": "CustomEndpoint",
+      "properties": {}
+    }
+  ],
+  "destinations": [
+    {
+      "id": "70a198c9-ffec-41b4-9f69-55cc87fa9037",
+      "name": "CustomEndpoint-Destination",
+      "type": "CustomEndpoint",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "demo_change-data-feed-display-stream"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "demo_change-data-feed-display-stream",
+          "schema": {
+            "columns": []
+          }
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "18d1aa80-ee33-4476-9a10-8b201bd43954",
+      "name": "demo_change-data-feed-display-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "CustomEndpoint-Source"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}

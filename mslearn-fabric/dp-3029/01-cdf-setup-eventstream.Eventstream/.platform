@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "01-cdf-setup-eventstream",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f24aef90-6be1-9c40-41c8-b41a0d4ebd72"
+  }
+}

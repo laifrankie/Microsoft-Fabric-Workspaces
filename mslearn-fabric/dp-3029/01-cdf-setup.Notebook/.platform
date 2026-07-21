@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "01-cdf-setup",
+    "description": "Create Delta table with Change Data Feed enable"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8ed6d1a2-8b09-bb05-4e60-a214aa07c516"
+  }
+}
