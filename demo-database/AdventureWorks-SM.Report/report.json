@@ -1,0 +1,63 @@
+{
+  "config": "{\"version\":\"5.70\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU02\",\"type\":2,\"version\":{\"visual\":\"2.6.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"}}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU02",
+            "path": "BaseThemes/CY26SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "47a41ed4bc5665dcd094",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4a30e9926155a8d338a5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.79602992927671,\"y\":0,\"z\":0,\"width\":871.8466637056271,\"height\":282.68543510198504,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"SalesLT Customer.CustomerID\"},{\"queryRef\":\"SalesLT Customer.CompanyName\"},{\"queryRef\":\"SalesLT Customer.FirstName\"},{\"queryRef\":\"SalesLT Customer.LastName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SalesLT Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"CustomerID\"},\"Name\":\"SalesLT Customer.CustomerID\",\"NativeReferenceName\":\"CustomerID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"CompanyName\"},\"Name\":\"SalesLT Customer.CompanyName\",\"NativeReferenceName\":\"CompanyName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"FirstName\"},\"Name\":\"SalesLT Customer.FirstName\",\"NativeReferenceName\":\"FirstName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"LastName\"},\"Name\":\"SalesLT Customer.LastName\",\"NativeReferenceName\":\"LastName\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 282.69,
+          "queryBinary": "H4sIAAAAAAAEAKWTT08CMRDFv4qZc2MWiZc9uoAxokEgeDAc6jJqzbbd9I9CyH53ZwrCYoIcuE07b37vNZmuobBaS7PwkL+sYYJUB1U+RXSrngxy8iFr3EogX0NqcDFD55U1kF8JGDir0/ij1Ag5eBDQJ0wgJUxkhX44vSiiD1ajo950VZMsa+aCDCssQxoubBW1YXZ/WTv0GzxlstGVOMa3/SF5NI2AkbM1uuTzy7/rATW2Sf6aX7ZULArqi8no0JS4nTkAnR/L6lqaVWL/l6slOxrsAHV2soFyPpzKtRcdS9XGnJ1pKE9H2mmOJdpD5oS5UWahzDv7jpzScrO+t87Gmq43a08JPmkNKSufM9ERV6LL2xlfgw2ygryTWPwjxriIScoYvpjxk8m3K9oGz2Rrv7kqbDS04ddZ1vBrdx+nQ4f+EsvIsAcMTpX+XvE36zTk9gMnxMmpmgMAAA==",
+          "width": 871.85,
+          "x": 9.80,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"a1b44998027c2c0e0363\",\"layouts\":[{\"id\":0,\"position\":{\"x\":892,\"y\":0,\"width\":388,\"height\":283,\"z\":2,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"CountNonNull(SalesLT Customer.CustomerID)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SalesLT Customer\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"CustomerID\"}},\"Function\":5},\"Name\":\"CountNonNull(SalesLT Customer.CustomerID)\",\"NativeReferenceName\":\"CustomerID\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"CustomerID\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 283.00,
+          "queryBinary": "H4sIAAAAAAAEAG1RTUvEMBD9KzInhSK7gpfetNsVUctqFy/SQ8iONdIkZZLILqX/3UnadUW8zcu8LyYDFFZrYXYO8rcBauTZK/kckA4r4UX9IXqcKZAPkBZxeEVyyhrIrzJYk9VJXgmNkIODDEq28cyEWnToHrdnRXDeaiTebQ890xZjk3Fgh9In8U3bErbCJ9cByn1P6NyMCtsF/c97bQNJfMH3E0gFxjGDDdkeKZU4ht+v0mYdjJxyrhnNrQsbjK+sqULXnf9tfXlyuIAo8eorxiKhkXh0+JXSsPGtMjtl2lhtQ0qL6XJ3ZEPPz9PFueQnpjIRL5ok/DnukkG5Rxki4Qk9KekeVPyK5cjMb2l7DpS+AQAA",
+          "width": 388.00,
+          "x": 892.00,
+          "y": 0.00,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"d19ab503301cc8346746\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":293,\"width\":872,\"height\":283,\"z\":1,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"SalesLT Product.Name\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(SalesLT Product.ListPrice)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SalesLT Product\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Name\"},\"Name\":\"SalesLT Product.Name\",\"NativeReferenceName\":\"Name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"ListPrice\"}},\"Function\":0},\"Name\":\"Sum(SalesLT Product.ListPrice)\",\"NativeReferenceName\":\"Sum of ListPrice\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"ListPrice\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 283.00,
+          "queryBinary": "H4sIAAAAAAAEAMWSPU/DMBCG/0p1E0gWShBTNvrFQIHSVmVAHazkGoxqO3JsoIry37lzIloqmBjY7Pt438fna2BktZamqCF7bmCJdPYqfwzo9mPp5fJFVtiXQNZATPBhja5W1kB2KWDqrI7t91IjZFCDgAnJeKqEpdxhPVsN5s4WIfeUWu0rqkrajSC/HVKMe0d2F7Rh6clH5bDu1AnJBpfjAreHS7RoWwGkWaGLNtGaQj3CietFDHPWqzcWQ4cmx764723guiwdllRjfwD5I+BM1X7uFCU5MQ0m72ySI+igz07Bv9rOf8WntoHdDo4MaLIPrkA33MfRjpXD3o1+6zv9/zy5bTcUGSpTKFOyCJVp2W3WjbOhonC3kST32sHzPRHpJrbybi6QJ9QjcWDNuERyJY71nsjFvnfPCYaWLU0SJhCHHU5bHgvmgdXu0BNzfat441Mm/QSmUtukJQMAAA==",
+          "width": 872.00,
+          "x": 10.00,
+          "y": 293.00,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

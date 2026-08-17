@@ -1,0 +1,216 @@
+table 'SalesLT vProductModelCatalogDescription'
+	lineageTag: 8ccbb217-3629-4c01-bf58-56e779e5961d
+
+	column ProductModelID
+		dataType: int64
+		formatString: 0
+		lineageTag: 8fbc74d6-b79f-4bc5-b063-ad43f2df9f69
+		summarizeBy: count
+		sourceColumn: ProductModelID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 43fe01b0-fb8f-4ab5-85f1-48db0d321ffa
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Summary
+		dataType: string
+		lineageTag: 21538a6c-f06b-4274-9665-2cb6f106aeee
+		summarizeBy: none
+		sourceColumn: Summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: 88b9ade3-c106-4f6f-a8ea-5b604ae9cbda
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Copyright
+		dataType: string
+		lineageTag: 9660c80a-c198-4e62-b7da-726a4bf88be9
+		summarizeBy: none
+		sourceColumn: Copyright
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductURL
+		dataType: string
+		lineageTag: b274056e-d8eb-4f8b-b203-4c2e5c3d06cc
+		summarizeBy: none
+		sourceColumn: ProductURL
+
+		annotation SummarizationSetBy = Automatic
+
+	column WarrantyPeriod
+		dataType: string
+		lineageTag: 5f1b3aa3-5df8-4c46-95e4-47d4a1ca60f1
+		summarizeBy: none
+		sourceColumn: WarrantyPeriod
+
+		annotation SummarizationSetBy = Automatic
+
+	column WarrantyDescription
+		dataType: string
+		lineageTag: fb13c9a6-f90d-4ecf-8cc9-d16bc8068a76
+		summarizeBy: none
+		sourceColumn: WarrantyDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column NoOfYears
+		dataType: string
+		lineageTag: cbce32b3-0401-42a7-bdeb-215eb64624ab
+		summarizeBy: none
+		sourceColumn: NoOfYears
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaintenanceDescription
+		dataType: string
+		lineageTag: 84ccf218-83bd-4842-8730-577540425b50
+		summarizeBy: none
+		sourceColumn: MaintenanceDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wheel
+		dataType: string
+		lineageTag: f847df59-b326-4d22-8e01-8c3fba4c84de
+		summarizeBy: none
+		sourceColumn: Wheel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Saddle
+		dataType: string
+		lineageTag: c19b5656-db34-449c-b7a5-93912e5a4a82
+		summarizeBy: none
+		sourceColumn: Saddle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pedal
+		dataType: string
+		lineageTag: 51e23a53-0f2c-44ff-ab36-bc8c73e25cf2
+		summarizeBy: none
+		sourceColumn: Pedal
+
+		annotation SummarizationSetBy = Automatic
+
+	column BikeFrame
+		dataType: string
+		lineageTag: 4f28edc7-5342-421d-9225-d431b446e023
+		summarizeBy: none
+		sourceColumn: BikeFrame
+
+		annotation SummarizationSetBy = Automatic
+
+	column Crankset
+		dataType: string
+		lineageTag: 4c6dadf3-f10f-4da1-89f0-02c23a3672aa
+		summarizeBy: none
+		sourceColumn: Crankset
+
+		annotation SummarizationSetBy = Automatic
+
+	column PictureAngle
+		dataType: string
+		lineageTag: a633e337-e183-4490-a91a-1c885ca84f33
+		summarizeBy: none
+		sourceColumn: PictureAngle
+
+		annotation SummarizationSetBy = Automatic
+
+	column PictureSize
+		dataType: string
+		lineageTag: 6b17b145-7b1e-42eb-8c0f-4c2eecc8a1e8
+		summarizeBy: none
+		sourceColumn: PictureSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductPhotoID
+		dataType: string
+		lineageTag: 0eb0811b-0692-4ae8-806b-e4bd59cb6cfb
+		summarizeBy: none
+		sourceColumn: ProductPhotoID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: string
+		lineageTag: eb55ff6c-89fe-41e7-ab27-520842bd2f68
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: dbd4d7b2-3699-46b6-84fa-5170f43a0be2
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductLine
+		dataType: string
+		lineageTag: 8dba8224-75ca-4f39-ad6c-32dcebe0569e
+		summarizeBy: none
+		sourceColumn: ProductLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column Style
+		dataType: string
+		lineageTag: e7a8d8c1-d9c3-4313-9bd5-9a3834dcc60e
+		summarizeBy: none
+		sourceColumn: Style
+
+		annotation SummarizationSetBy = Automatic
+
+	column RiderExperience
+		dataType: string
+		lineageTag: 7e2c9de7-4a41-48b4-b8ee-7a43cabd0c88
+		summarizeBy: none
+		sourceColumn: RiderExperience
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: a067c0fc-301f-4c39-9dca-81d5d7a5dd8f
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3214dd55-91cb-4560-b9e2-ba625f7c0725
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SalesLT vProductModelCatalogDescription' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("mssqlzjdvg61.database.windows.net", "AdventureWorksLT"),
+				    SalesLT_vProductModelCatalogDescription = Source{[Schema="SalesLT",Item="vProductModelCatalogDescription"]}[Data]
+				in
+				    SalesLT_vProductModelCatalogDescription
+
+	annotation PBI_ResultType = Table
+

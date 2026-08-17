@@ -1,0 +1,57 @@
+table 'SalesLT ProductModelProductDescription'
+	lineageTag: 14e44311-4baf-45c0-9c09-c60f706141f2
+
+	column ProductModelID
+		dataType: int64
+		formatString: 0
+		lineageTag: b0bc9739-f129-49bf-a4a6-6b79293c3bad
+		summarizeBy: none
+		sourceColumn: ProductModelID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductDescriptionID
+		dataType: int64
+		formatString: 0
+		lineageTag: e8cf7f41-c108-4954-91e3-15a16d39e73b
+		summarizeBy: none
+		sourceColumn: ProductDescriptionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Culture
+		dataType: string
+		lineageTag: d53b71d7-e27f-428d-b846-e16aa0c2a13e
+		summarizeBy: none
+		sourceColumn: Culture
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: 4d4492bc-7c96-45f3-a075-6a54b6a75929
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7c368ba3-5c95-4556-99a6-e18ef057182d
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SalesLT ProductModelProductDescription' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("mssqlzjdvg61.database.windows.net", "AdventureWorksLT"),
+				    SalesLT_ProductModelProductDescription = Source{[Schema="SalesLT",Item="ProductModelProductDescription"]}[Data]
+				in
+				    SalesLT_ProductModelProductDescription
+
+	annotation PBI_ResultType = Table
+

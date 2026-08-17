@@ -1,0 +1,88 @@
+table 'SalesLT Address'
+	lineageTag: 958c6c3a-4a44-46b0-8f12-c0112c2e6e8c
+
+	column AddressID
+		dataType: int64
+		formatString: 0
+		lineageTag: 234d309d-b3c1-4087-98bf-5dd605e2a17a
+		summarizeBy: none
+		sourceColumn: AddressID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine1
+		dataType: string
+		lineageTag: ed9e5de6-1061-441e-aaa4-f9f4d967d064
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine2
+		dataType: string
+		lineageTag: e68b14ff-5d7e-4685-9497-402a688b5168
+		summarizeBy: none
+		sourceColumn: AddressLine2
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 43b5d453-cf81-447f-a501-39efac75be1f
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvince
+		dataType: string
+		lineageTag: 4ec6e90c-fb48-4b44-af81-4cccde91a8f4
+		summarizeBy: none
+		sourceColumn: StateProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegion
+		dataType: string
+		lineageTag: 0047f567-8d69-41d5-bfac-d93cb126e1a9
+		summarizeBy: none
+		sourceColumn: CountryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: 801bfb7e-7dd9-4924-8ba2-eed9c7c3ccec
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: a4259e0d-27e3-4c15-897b-7f1d52194c81
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9aa23dd2-a2f0-4371-a13f-de77c68f7ae8
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SalesLT Address' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("mssqlzjdvg61.database.windows.net", "AdventureWorksLT"),
+				    SalesLT_Address = Source{[Schema="SalesLT",Item="Address"]}[Data]
+				in
+				    SalesLT_Address
+
+	annotation PBI_ResultType = Table
+

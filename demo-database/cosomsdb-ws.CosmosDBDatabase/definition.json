@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/CosmosDB/definition/CosmosDB/2.0.0/schema.json",
+  "containers": [
+    {
+      "options": {
+        "autoscaleSettings": {
+          "maxThroughput": 5000
+        }
+      },
+      "resource": {
+        "id": "Products",
+        "computedProperties": [],
+        "conflictResolutionPolicy": {
+          "mode": "LastWriterWins",
+          "conflictResolutionPath": "/_ts",
+          "conflictResolutionProcedure": ""
+        },
+        "fullTextPolicy": {
+          "defaultLanguage": "en-US",
+          "fullTextPaths": []
+        },
+        "geospatialConfig": {
+          "type": "Geography"
+        },
+        "indexingPolicy": {
+          "automatic": true,
+          "indexingMode": "Consistent",
+          "includedPaths": [
+            {
+              "path": "/*",
+              "indexes": []
+            }
+          ],
+          "excludedPaths": [
+            {
+              "path": "/\"_etag\"/?"
+            }
+          ],
+          "compositeIndexes": [],
+          "spatialIndexes": [],
+          "vectorIndexes": [],
+          "fullTextIndexes": []
+        },
+        "partitionKey": {
+          "paths": [
+            "/ProductId"
+          ],
+          "kind": "Hash",
+          "version": 2
+        },
+        "uniqueKeyPolicy": {
+          "uniqueKeys": []
+        },
+        "vectorEmbeddingPolicy": {
+          "vectorEmbeddings": []
+        }
+      }
+    }
+  ]
+}

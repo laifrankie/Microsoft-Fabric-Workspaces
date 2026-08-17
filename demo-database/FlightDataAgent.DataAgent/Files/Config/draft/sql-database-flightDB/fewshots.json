@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/fewShots/1.0.0/schema.json",
+  "fewShots": [
+    {
+      "id": "ec14389b-6396-4e2f-b1fa-773f9947bc55",
+      "question": "For flight ZX102 on 2026‑01‑05, how many seats are available and which seats are already assigned?",
+      "query": "-- Availability for a specific flight number on a specific calendar date\r\nWITH booked AS (\r\n    SELECT\r\n        fb.flight_id,\r\n        COUNT(CASE WHEN fb.booking_status IN ('Confirmed','CheckedIn') THEN 1 END) AS booked_count\r\n    FROM dbo.flight_booking AS fb\r\n    GROUP BY fb.flight_id\r\n)\r\nSELECT\r\n    fs.flight_id,\r\n    fs.flight_number,\r\n    fs.seat_capacity,\r\n    COALESCE(fs.seat_capacity - b.booked_count, fs.seat_capacity) AS available_seats\r\nFROM dbo.flight_schedule AS fs\r\nLEFT JOIN booked AS b\r\n    ON b.flight_id = fs.flight_id\r\nWHERE fs.flight_number = N'ZX102'\r\n  AND CONVERT(date, fs.departure_time) = CONVERT(date, '2026-01-05');\r\n\r\n-- Already-assigned seat numbers for the same flight and date\r\nSELECT\r\n    fb.seat_number\r\nFROM dbo.flight_booking AS fb\r\nINNER JOIN dbo.flight_schedule AS fs\r\n    ON fs.flight_id = fb.flight_id\r\nWHERE fs.flight_number = N'ZX102'\r\n  AND CONVERT(date, fs.departure_time) = CONVERT(date, '2026-01-05')\r\n  AND fb.booking_status IN ('Confirmed','CheckedIn')\r\n  AND fb.seat_number IS NOT NULL\r\nORDER BY fb.seat_number;\r\n"
+    },
+    {
+      "id": "ea2e2a95-fdcc-456b-8d8d-6368ebc59bec",
+      "question": "Between 2026‑01‑05 and 2026‑01‑10, show top 5 routes by revenue.",
+      "query": "SELECT TOP (5)\r\n    fs.departure_airport,\r\n    fs.arrival_airport,\r\n    SUM(fb.fare_paid + fb.taxes_and_fees) AS total_revenue,\r\n    COUNT(*) AS booking_count\r\nFROM dbo.flight_schedule AS fs\r\nINNER JOIN dbo.flight_booking AS fb\r\n    ON fb.flight_id = fs.flight_id\r\nWHERE fs.departure_time >= '2026-01-05T00:00:00'\r\n  AND fs.departure_time <  '2026-01-11T00:00:00'\r\n  AND fb.booking_status <> N'Cancelled'\r\nGROUP BY\r\n    fs.departure_airport,\r\n    fs.arrival_airport\r\nORDER BY\r\n    total_revenue"
+    },
+    {
+      "id": "b93d6b89-b20d-4d90-ad9b-51c724d49497",
+      "question": "List all flights departing HKG in the next 7 days with status, booked seats, and load factor.",
+      "query": "\r\n-- Compute booked seats (Confirmed + CheckedIn) and load factor\r\nWITH booked AS (\r\n    SELECT\r\n        fb.flight_id,\r\n        COUNT(CASE WHEN fb.booking_status IN ('Confirmed','CheckedIn') THEN 1 END) AS booked_seats\r\n    FROM dbo.flight_booking AS fb\r\n    GROUP BY fb.flight_id\r\n)\r\nSELECT\r\n    fs.flight_number,\r\n    fs.departure_airport,\r\n    fs.arrival_airport,\r\n    fs.departure_time,\r\n    fs.status,\r\n    COALESCE(b.booked_seats, 0) AS booked_seats,\r\n    CAST(100.0 * COALESCE(b.booked_seats, 0) / NULLIF(fs.seat_capacity, 0) AS DECIMAL(5,2)) AS load_factor_pct\r\nFROM dbo.flight_schedule AS fs\r\nLEFT JOIN booked AS b\r\n    ON b.flight_id = fs.flight_id\r\nWHERE fs.departure_airport = N'HKG'\r\n  AND fs.departure_time >= SYSUTCDATETIME()\r\n  AND fs.departure_time <  DATEADD(day, 7, SYSUTCDATETIME())\r\nORDER BY fs.departure_time;\r\n"
+    },
+    {
+      "id": "8a03fd38-950e-4a25-9bd6-60378eb077ba",
+      "question": "Show Ivan Cheung’s upcoming bookings with flight number, airports and times.",
+      "query": "\r\nSELECT\r\n    c.first_name,\r\n    c.last_name,\r\n    c.email,\r\n    fs.flight_number,\r\n    fs.departure_airport,\r\n    fs.arrival_airport,\r\n    fs.departure_time,\r\n    fs.arrival_time,\r\n    fb.booking_status,\r\n    fb.seat_number\r\nFROM dbo.customers AS c\r\nINNER JOIN dbo.flight_booking AS fb\r\n    ON fb.customer_id = c.customer_id\r\nINNER JOIN dbo.flight_schedule AS fs\r\n    ON fs.flight_id = fb.flight_id\r\nWHERE c.email = N'ivan.cheung@example.com'\r\n  AND fs.departure_time >= SYSUTCDATETIME()\r\n"
+    },
+    {
+      "id": "18609149-756e-4b5d-af15-30baa7a5bab4",
+      "question": "For flights to NRT next month, compare base fare with average final charge (fare + taxes), excluding cancelled.",
+      "query": "\r\n-- Compute first day of next month in UTC for simplicity\r\nDECLARE @startdate DATE = DATEADD(month, 1, DATEFROMPARTS(YEAR(GETUTCDATE()), MONTH(GETUTCDATE()), 1));\r\nDECLARE @enddate   DATE = DATEADD(month, 1, @startdate);\r\n\r\nSELECT\r\n    fs.flight_number,\r\n    CONVERT(date, fs.departure_time) AS dep_date,\r\n    fs.base_fare,\r\n    CAST(AVG(fb.fare_paid + fb.taxes_and_fees) AS DECIMAL(10,2)) AS avg_final_charge\r\nFROM dbo.flight_schedule AS fs\r\nLEFT JOIN dbo.flight_booking AS fb\r\n  ON fb.flight_id = fs.flight_id\r\n AND fb.booking_status <> N'Cancelled'\r\nWHERE fs.arrival_airport = N'NRT'\r\n  AND fs.departure_time >= @startdate\r\n  AND fs.departure_time <  @enddate\r\nGROUP BY\r\n    fs.flight_number,\r\n    CONVERT(date, fs.departure_time),\r\n    fs.base_fare\r\n"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+table 'SalesLT ProductCategory'
+	lineageTag: e758257a-501e-48de-b127-0151b1c6062b
+
+	column ProductCategoryID
+		dataType: int64
+		formatString: 0
+		lineageTag: a7feb607-ad90-48ac-b33a-973d9d19b9b2
+		summarizeBy: none
+		sourceColumn: ProductCategoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentProductCategoryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 37f3b520-591a-4e53-bd64-f76264da50f5
+		summarizeBy: none
+		sourceColumn: ParentProductCategoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 4bd5e374-36cb-4f68-a3a9-128ff601ce1a
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: 7235ccb5-30f2-4d1f-99c2-571e2f2e21de
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1ac83f32-6d7f-4186-ad35-18c83bacf14b
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SalesLT ProductCategory' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("mssqlzjdvg61.database.windows.net", "AdventureWorksLT"),
+				    SalesLT_ProductCategory = Source{[Schema="SalesLT",Item="ProductCategory"]}[Data]
+				in
+				    SalesLT_ProductCategory
+
+	annotation PBI_ResultType = Table
+

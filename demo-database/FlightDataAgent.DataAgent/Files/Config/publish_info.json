@@ -1,0 +1,4 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/publishInfo/1.0.0/schema.json",
+  "description": "The FlightDataAgent is designed to provide fast, accurate, and conversational access to flight operations data for a startup airline. Its primary goal is to help business users, operations teams, and customer service staff retrieve insights without writing SQL. By leveraging Microsoft Fabric’s Data Agent capabilities, it enables natural language queries against structured flight data stored in Fabric Warehouse or SQL Database.\n"
+}

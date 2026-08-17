@@ -1,0 +1,345 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "fdc245e5-3986-b121-4cac-ff9d75e5daad",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": "\r\n## General knowledge\r\nThis source contains three tables:\r\n- `customers(customer_id PK, first_name, last_name, email UNIQUE, phone, date_of_birth, loyalty_tier, created_at)`\r\n- `flight_schedule(flight_id PK, flight_number, departure_airport, arrival_airport, departure_time, arrival_time, aircraft_type, base_fare, seat_capacity, status, created_at)`\r\n- `flight_booking(booking_id PK, flight_id FK, customer_id FK, booking_reference UNIQUE, booking_status, booking_channel, seat_number, fare_paid, taxes_and_fees, currency, payment_method, created_at)`\r\n\r\nRelationships:\r\n- `customers.customer_id` 1—* `flight_booking.customer_id`\r\n- `flight_schedule.flight_id` 1—* `flight_booking.flight_id`\r\n\r\n## Querying guidance\r\n- Join `flight_schedule` → `flight_booking` using `flight_booking.flight_id = flight_schedule.flight_id`.\r\n- Join bookings to customers using `flight_booking.customer_id = customers.customer_id`.\r\n- Availability per flight: count bookings with `booking_status IN ('Confirmed','CheckedIn')`.\r\n- Revenue per flight: sum `fare_paid + taxes_and_fees` where `booking_status <> 'Cancelled'`.\r\n- Cancelled bookings should **not** reduce revenue; no refunds modeled in this dataset.\r\n- Use `departure_time` for scheduling filters; treat it as local time for the departure airport.\r\n- Exclude results where `departure_airport = arrival_airport`.\r\n\r\n## Column selection (default)\r\n- Flights: `flight_id, flight_number, departure_airport, arrival_airport, departure_time, arrival_time, aircraft_type, base_fare, seat_capacity, status`\r\n- Bookings: `booking_id, booking_reference, booking_status, booking_channel, seat_number, fare_paid, taxes_and_fees, currency, payment_method, created_at`\r\n- Customers: `customer_id, first_name, last_name, email, loyalty_tier`\r\n\r\n## Common filters\r\n- Date ranges: `departure_time BETWEEN {start} AND {end}`\r\n- Airports: `departure_airport IN (...) OR arrival_airport IN (...)`\r\n- Status: `booking_status IN (...)` or `status IN (...)`\r\n\r\n## Examples the agent can follow\r\n1) **Available seats for a flight_number and date**\r\n   - Join schedule and bookings; group by `flight_id`; compute `available_seats`.\r\n\r\n2) **Top routes by revenue in a period**\r\n   - Group by `(departure_airport, arrival_airport)`; sum `fare_paid + taxes_and_fees` where `booking_status <> 'Cancelled'`.\r\n\r\n3) **Customer’s upcoming trips**\r\n   - Filter bookings by customer (email or ID); join to `flight_schedule`; `departure_time >= TODAY()`; order by `departure_time`.\r\n\r\n## Output format expectations\r\n- Provide a compact table (5–10 columns) and a one-sentence summary.\r\n- Include the filters used at the top (date range, airports).\r\n",
+  "displayName": "flightDB",
+  "type": "sql_database",
+  "userDescription": "\r\n## General knowledge\r\nThis source contains three tables:\r\n- `customers(customer_id PK, first_name, last_name, email UNIQUE, phone, date_of_birth, loyalty_tier, created_at)`\r\n- `flight_schedule(flight_id PK, flight_number, departure_airport, arrival_airport, departure_time, arrival_time, aircraft_type, base_fare, seat_capacity, status, created_at)`\r\n- `flight_booking(booking_id PK, flight_id FK, customer_id FK, booking_reference UNIQUE, booking_status, booking_channel, seat_number, fare_paid, taxes_and_fees, currency, payment_method, created_at)`\r\n\r\nRelationships:\r\n- `customers.customer_id` 1—* `flight_booking.customer_id`\r\n- `flight_schedule.flight_id` 1—* `flight_booking.flight_id`\r\n\r\n## Querying guidance\r\n- Join `flight_schedule` → `flight_booking` using `flight_booking.flight_id = fli",
+  "metadata": null,
+  "elements": [
+    {
+      "id": "f7d13a6e-ee53-48e8-aed3-19703b3fbaf8",
+      "is_selected": false,
+      "display_name": "Schemas",
+      "type": "schema_grouping",
+      "description": null,
+      "children": [
+        {
+          "id": "64453867-c444-4247-96b8-e9cfddd0f102",
+          "is_selected": false,
+          "display_name": "dbo",
+          "type": "sql_database.schema",
+          "description": null,
+          "children": [
+            {
+              "id": "538026d3-eff3-4022-aad9-cbc6e256d770",
+              "is_selected": false,
+              "display_name": "Tables",
+              "type": "table_grouping",
+              "description": null,
+              "children": [
+                {
+                  "id": "c529f9b0-e10f-4680-b980-f47146c30006",
+                  "is_selected": true,
+                  "display_name": "customers",
+                  "type": "sql_database.table",
+                  "description": null,
+                  "children": [
+                    {
+                      "id": "d89dfd10-2289-46b3-aaaf-a23970866934",
+                      "is_selected": true,
+                      "display_name": "created_at",
+                      "type": "sql_database.column",
+                      "data_type": "datetime2",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "748a7b79-2834-4d55-8409-5ba801faefdc",
+                      "is_selected": true,
+                      "display_name": "customer_id",
+                      "type": "sql_database.column",
+                      "data_type": "bigint",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "07a96d4f-f897-44c2-a085-ab8eac09a067",
+                      "is_selected": true,
+                      "display_name": "date_of_birth",
+                      "type": "sql_database.column",
+                      "data_type": "date",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "36105c47-e879-46b9-a9f0-f99e59b8de09",
+                      "is_selected": true,
+                      "display_name": "email",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "1dea76cc-d939-4af7-9b15-14088db8808e",
+                      "is_selected": true,
+                      "display_name": "first_name",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "76dde165-7071-42d1-98bb-c1b2df607f44",
+                      "is_selected": true,
+                      "display_name": "last_name",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "69227ddb-9503-4cbb-846c-973ee4a1c624",
+                      "is_selected": true,
+                      "display_name": "loyalty_tier",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "65c7eed9-4d79-46fd-a83e-4c7c867c9ea2",
+                      "is_selected": true,
+                      "display_name": "phone",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "4040429f-ee22-4765-821e-e0832efa50be",
+                  "is_selected": true,
+                  "display_name": "flight_booking",
+                  "type": "sql_database.table",
+                  "description": null,
+                  "children": [
+                    {
+                      "id": "5891c21d-d08e-4e0d-9883-f16475abb16b",
+                      "is_selected": true,
+                      "display_name": "booking_channel",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "5945b128-7d7e-4d5b-93f3-cff204829d93",
+                      "is_selected": true,
+                      "display_name": "booking_id",
+                      "type": "sql_database.column",
+                      "data_type": "bigint",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "13a1f1db-f7eb-4551-820a-9879f119d5e2",
+                      "is_selected": true,
+                      "display_name": "booking_reference",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "a7e7115b-aa82-4b33-ab21-f8cc5fabf71d",
+                      "is_selected": true,
+                      "display_name": "booking_status",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "521c3fb3-50f0-48bb-b088-d1ab92525667",
+                      "is_selected": true,
+                      "display_name": "created_at",
+                      "type": "sql_database.column",
+                      "data_type": "datetime2",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "923adf3b-1834-4d23-bf65-385f236fa3ac",
+                      "is_selected": true,
+                      "display_name": "currency",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "423e32b2-3839-403f-8c86-f7ce9bb15784",
+                      "is_selected": true,
+                      "display_name": "customer_id",
+                      "type": "sql_database.column",
+                      "data_type": "bigint",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "b4b429e3-c485-4f3b-83c7-e7f51f7acf49",
+                      "is_selected": true,
+                      "display_name": "fare_paid",
+                      "type": "sql_database.column",
+                      "data_type": "decimal",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "5b49df41-850b-41b6-b626-53a35efb51df",
+                      "is_selected": true,
+                      "display_name": "flight_id",
+                      "type": "sql_database.column",
+                      "data_type": "bigint",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "d4c3598d-bb86-4bed-b6fe-885887102eaa",
+                      "is_selected": true,
+                      "display_name": "payment_method",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "3b7f12bd-c329-425f-899d-52676c3aedd5",
+                      "is_selected": true,
+                      "display_name": "seat_number",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "ae07502f-04d1-4efb-b8a6-4a0dafc1ce9e",
+                      "is_selected": true,
+                      "display_name": "taxes_and_fees",
+                      "type": "sql_database.column",
+                      "data_type": "decimal",
+                      "description": null,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "69ae8f39-7f2f-4726-8de4-b4e21fb3df15",
+                  "is_selected": true,
+                  "display_name": "flight_schedule",
+                  "type": "sql_database.table",
+                  "description": null,
+                  "children": [
+                    {
+                      "id": "ecb7e3da-b621-4658-b9ee-e452c9d989b8",
+                      "is_selected": true,
+                      "display_name": "aircraft_type",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "8f14748b-8ae3-49d5-866e-1cf689271ab5",
+                      "is_selected": true,
+                      "display_name": "arrival_airport",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "87051bd0-3efb-4a7c-940b-d89581e03b81",
+                      "is_selected": true,
+                      "display_name": "arrival_time",
+                      "type": "sql_database.column",
+                      "data_type": "datetime2",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "196ab0d7-cacb-40d3-8d20-623b73215bdd",
+                      "is_selected": true,
+                      "display_name": "base_fare",
+                      "type": "sql_database.column",
+                      "data_type": "decimal",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "d44c9abe-b458-40b9-87c2-545d3088666b",
+                      "is_selected": true,
+                      "display_name": "created_at",
+                      "type": "sql_database.column",
+                      "data_type": "datetime2",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "54063bea-10d6-4c44-b2e5-6ec2d936a22c",
+                      "is_selected": true,
+                      "display_name": "departure_airport",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "6aca9f93-4d5a-4586-9471-ea6eb2293b65",
+                      "is_selected": true,
+                      "display_name": "departure_time",
+                      "type": "sql_database.column",
+                      "data_type": "datetime2",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "f7967658-cd25-4e81-869e-628f6652b2c0",
+                      "is_selected": true,
+                      "display_name": "flight_id",
+                      "type": "sql_database.column",
+                      "data_type": "bigint",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "f49eb519-986b-4f09-bae9-910d50c51f3e",
+                      "is_selected": true,
+                      "display_name": "flight_number",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "5f818b73-64f2-4afc-977c-ff1d5766beb2",
+                      "is_selected": true,
+                      "display_name": "seat_capacity",
+                      "type": "sql_database.column",
+                      "data_type": "int",
+                      "description": null,
+                      "children": []
+                    },
+                    {
+                      "id": "17f05f1b-42a3-4c94-a9f4-bfaaea33ef16",
+                      "is_selected": true,
+                      "display_name": "status",
+                      "type": "sql_database.column",
+                      "data_type": "varchar",
+                      "description": null,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

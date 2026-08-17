@@ -1,0 +1,1281 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "586bcb7f-dbdb-a0c2-47ff-f123914a8d4e",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "AdventureWorks-SM",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "958c6c3a-4a44-46b0-8f12-c0112c2e6e8c",
+      "is_selected": true,
+      "display_name": "SalesLT Address",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "234d309d-b3c1-4087-98bf-5dd605e2a17a",
+          "is_selected": true,
+          "display_name": "AddressID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ed9e5de6-1061-441e-aaa4-f9f4d967d064",
+          "is_selected": true,
+          "display_name": "AddressLine1",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e68b14ff-5d7e-4685-9497-402a688b5168",
+          "is_selected": true,
+          "display_name": "AddressLine2",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "43b5d453-cf81-447f-a501-39efac75be1f",
+          "is_selected": true,
+          "display_name": "City",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0047f567-8d69-41d5-bfac-d93cb126e1a9",
+          "is_selected": true,
+          "display_name": "CountryRegion",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9aa23dd2-a2f0-4371-a13f-de77c68f7ae8",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "801bfb7e-7dd9-4924-8ba2-eed9c7c3ccec",
+          "is_selected": true,
+          "display_name": "PostalCode",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a4259e0d-27e3-4c15-897b-7f1d52194c81",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4ec6e90c-fb48-4b44-af81-4cccde91a8f4",
+          "is_selected": true,
+          "display_name": "StateProvince",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "5a3962d7-9db4-4fd1-ac91-c7916543afba",
+      "is_selected": true,
+      "display_name": "SalesLT Customer",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "ca55c856-e5ad-4d76-a519-54cb55d81639",
+          "is_selected": true,
+          "display_name": "CompanyName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "486b179c-cd3a-4459-90a8-e868eb895848",
+          "is_selected": true,
+          "display_name": "CustomerID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c9410e3f-2dec-459f-a936-d209f4e0875b",
+          "is_selected": true,
+          "display_name": "EmailAddress",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3070ce70-db7c-46e9-925e-8f8328abce7e",
+          "is_selected": true,
+          "display_name": "FirstName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f46270e6-c2c9-4676-849b-d6b692dba4ec",
+          "is_selected": true,
+          "display_name": "LastName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e6be597a-c515-4b2a-990e-18803f648ac9",
+          "is_selected": true,
+          "display_name": "MiddleName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "280992e4-55dd-4064-894c-2a860ffeec2b",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "28b09f9d-9cc5-4b7a-937b-f29ffa077a89",
+          "is_selected": true,
+          "display_name": "NameStyle",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "16b29526-766b-4774-8476-d194e7376b05",
+          "is_selected": true,
+          "display_name": "PasswordHash",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "97e4c7ae-43e7-443b-a805-41aeb6239431",
+          "is_selected": true,
+          "display_name": "PasswordSalt",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "64b08a15-ffaa-468f-a628-a16bdcae16f5",
+          "is_selected": true,
+          "display_name": "Phone",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "543133c8-86ab-4312-9318-5f3af6917fc1",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f83499c8-44d8-4796-8820-288355aff1f3",
+          "is_selected": true,
+          "display_name": "SalesPerson",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f5cb971b-83b2-4d9c-b0c5-49467fa43a70",
+          "is_selected": true,
+          "display_name": "Suffix",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f9445c7f-4ac1-4ce0-93de-e216b49ba5d8",
+          "is_selected": true,
+          "display_name": "Title",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "a4726dcf-ead2-4820-9a99-672819ab10aa",
+      "is_selected": true,
+      "display_name": "SalesLT CustomerAddress",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "ef380155-e5e8-4d4f-8afd-d8c5a5e2da49",
+          "is_selected": true,
+          "display_name": "AddressID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51b6c4e3-12ed-43e8-80cf-a8391744da7d",
+          "is_selected": true,
+          "display_name": "AddressType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a6dfbd1e-80ab-4c8d-bf9e-ec8403e6a710",
+          "is_selected": true,
+          "display_name": "CustomerID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d6875c1-e732-4cf3-8436-7c485133de69",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "97923906-715d-4e84-93bc-fa0ee0859be3",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cc13261e-2079-4f43-b8f4-3bc90f2beda3",
+      "is_selected": true,
+      "display_name": "SalesLT Product",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "6f59e96b-0929-4344-855b-5e290b9a2b4e",
+          "is_selected": true,
+          "display_name": "Color",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f7cce660-395a-416a-8a57-339e57b32aec",
+          "is_selected": true,
+          "display_name": "DiscontinuedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0bb255c9-90f1-4e32-a7bc-06ecd02868b4",
+          "is_selected": true,
+          "display_name": "ListPrice",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6ae4d073-b2e2-45ae-b8f1-3dc08f83f3ff",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ad5fba72-4ec3-4269-bbec-ed6e2fc67c6f",
+          "is_selected": true,
+          "display_name": "Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6d4a10a7-53bc-4ef6-8039-2ea25051b74b",
+          "is_selected": true,
+          "display_name": "ProductCategoryID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "178c6aa1-8076-4fc0-a085-8f63bfcc55f5",
+          "is_selected": true,
+          "display_name": "ProductID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c4c31760-27c6-4b6a-8b99-ef70e0e0c777",
+          "is_selected": true,
+          "display_name": "ProductModelID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f63e7124-f561-4e37-a69e-1106ebcebd1b",
+          "is_selected": true,
+          "display_name": "ProductNumber",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b7006726-1362-4609-afab-99a6ed74118f",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "912dca11-6724-4031-9e7e-73048902441a",
+          "is_selected": true,
+          "display_name": "SellEndDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a61823bc-f1d5-49c1-a05b-032dcff9891d",
+          "is_selected": true,
+          "display_name": "SellStartDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8b4ec150-c981-48f3-b039-1f98dddaac05",
+          "is_selected": true,
+          "display_name": "Size",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c2258a14-7bad-4e37-bdc1-17973d96d832",
+          "is_selected": true,
+          "display_name": "StandardCost",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6d10854e-7827-4de5-bd3a-4cfdc0199c57",
+          "is_selected": true,
+          "display_name": "ThumbnailPhotoFileName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6fcc9949-8822-481c-ad52-7ac64f0fed02",
+          "is_selected": true,
+          "display_name": "Weight",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e758257a-501e-48de-b127-0151b1c6062b",
+      "is_selected": true,
+      "display_name": "SalesLT ProductCategory",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "1ac83f32-6d7f-4186-ad35-18c83bacf14b",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4bd5e374-36cb-4f68-a3a9-128ff601ce1a",
+          "is_selected": true,
+          "display_name": "Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "37f3b520-591a-4e53-bd64-f76264da50f5",
+          "is_selected": true,
+          "display_name": "ParentProductCategoryID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a7feb607-ad90-48ac-b33a-973d9d19b9b2",
+          "is_selected": true,
+          "display_name": "ProductCategoryID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7235ccb5-30f2-4d1f-99c2-571e2f2e21de",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "d88a8757-b362-4b9c-8db7-700fa85f6eed",
+      "is_selected": true,
+      "display_name": "SalesLT ProductDescription",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "1d8ef783-82b6-44bd-aa54-b93a86bd88ab",
+          "is_selected": true,
+          "display_name": "Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b9ebf26b-d5cd-468a-b4ed-0f241f485d1c",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7a2f3057-4a5e-4769-8319-55c6fc41d3ee",
+          "is_selected": true,
+          "display_name": "ProductDescriptionID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66aa5069-0959-4fea-9c9b-341a2d377e3f",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "21084fee-bc92-43be-b35b-536e60d6765d",
+      "is_selected": true,
+      "display_name": "SalesLT ProductModel",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "0eb2455a-9e00-4121-acdc-4345e5910ea5",
+          "is_selected": true,
+          "display_name": "CatalogDescription",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d5968713-0cd0-4342-b7ee-276ac18b364f",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "935d1110-1d5d-4f01-a4a6-46c3235edf17",
+          "is_selected": true,
+          "display_name": "Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ff44422c-bd55-42c6-8a4c-3c8d3f13a4cd",
+          "is_selected": true,
+          "display_name": "ProductModelID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b0719f16-c29f-42b5-9924-68bc8756515b",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "14e44311-4baf-45c0-9c09-c60f706141f2",
+      "is_selected": true,
+      "display_name": "SalesLT ProductModelProductDescription",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "d53b71d7-e27f-428d-b846-e16aa0c2a13e",
+          "is_selected": true,
+          "display_name": "Culture",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7c368ba3-5c95-4556-99a6-e18ef057182d",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e8cf7f41-c108-4954-91e3-15a16d39e73b",
+          "is_selected": true,
+          "display_name": "ProductDescriptionID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b0bc9739-f129-49bf-a4a6-6b79293c3bad",
+          "is_selected": true,
+          "display_name": "ProductModelID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d4492bc-7c96-45f3-a075-6a54b6a75929",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "8c946daa-82de-48bf-ab8a-3d5739199b2e",
+      "is_selected": true,
+      "display_name": "SalesLT SalesOrderDetail",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "c3e2b765-1bcd-485b-a5c2-20f19970a837",
+          "is_selected": true,
+          "display_name": "LineTotal",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b692f810-92ae-4a11-aa4e-e354f023171d",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f358de7e-3add-436d-971b-ea829a1effad",
+          "is_selected": true,
+          "display_name": "OrderQty",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "38cd17c3-7fac-4221-9bce-344141d99794",
+          "is_selected": true,
+          "display_name": "ProductID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cf3a2385-d83b-4688-a0ed-4c6258417a1a",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "85774768-b938-4477-8bf0-97bf94fa7ea8",
+          "is_selected": true,
+          "display_name": "SalesOrderDetailID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b139c113-fcff-4012-8d07-a64bfb362fc2",
+          "is_selected": true,
+          "display_name": "SalesOrderID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a2401532-b9fa-49fd-825b-940b81f6e6ca",
+          "is_selected": true,
+          "display_name": "UnitPrice",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9b2ef5cf-6ef2-4139-a7a2-7ffb1c1fc68b",
+          "is_selected": true,
+          "display_name": "UnitPriceDiscount",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2e638516-ac1c-43b3-a2b1-3aef54185148",
+      "is_selected": true,
+      "display_name": "SalesLT SalesOrderHeader",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "68376804-a1f0-4fc3-8811-8590080eafa3",
+          "is_selected": true,
+          "display_name": "AccountNumber",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51f0814f-b97b-4d73-be67-f3778c25ad87",
+          "is_selected": true,
+          "display_name": "BillToAddressID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9b87006e-2aae-4724-b5e8-700dde9e09e9",
+          "is_selected": true,
+          "display_name": "Comment",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9ae8ef2e-3be8-4499-af3f-3deddd082398",
+          "is_selected": true,
+          "display_name": "CreditCardApprovalCode",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d9c54d93-965c-4dc6-84e8-5e40bebafee1",
+          "is_selected": true,
+          "display_name": "CustomerID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "80a27120-d34f-43fc-a493-07ae8ecedb2a",
+          "is_selected": true,
+          "display_name": "DueDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66ce233a-19d1-404d-a435-09af21097af4",
+          "is_selected": true,
+          "display_name": "Freight",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7ad475fb-d215-4fe4-9b4b-be61262e7411",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9a9be96e-6a3f-4ef3-a425-af0394c2029b",
+          "is_selected": true,
+          "display_name": "OnlineOrderFlag",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "731d049c-0e94-4f7a-b620-47e81368f7ef",
+          "is_selected": true,
+          "display_name": "OrderDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "350faeaa-7cea-48a2-881d-0dccf3e79776",
+          "is_selected": true,
+          "display_name": "PurchaseOrderNumber",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e813a343-7548-47a6-9b04-af6e48cdd666",
+          "is_selected": true,
+          "display_name": "RevisionNumber",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2bb64883-0346-4a2d-b4c3-c866a4b31571",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6062afa4-f97d-4a16-a20c-ada555d8efeb",
+          "is_selected": true,
+          "display_name": "SalesOrderID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "44520b9e-f245-40e9-bfad-fc545d645a9b",
+          "is_selected": true,
+          "display_name": "SalesOrderNumber",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5241bf7b-fd4b-48af-a366-623552accdb0",
+          "is_selected": true,
+          "display_name": "ShipDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "13205baa-e010-4b04-b72d-66148a61355b",
+          "is_selected": true,
+          "display_name": "ShipMethod",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f3c79649-4bb5-43b4-bbd2-1295a871ec29",
+          "is_selected": true,
+          "display_name": "ShipToAddressID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f7d5031e-88a5-4791-b146-fea36d575ee4",
+          "is_selected": true,
+          "display_name": "Status",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3b3b519c-1bb7-4f56-900b-6e314e266de9",
+          "is_selected": true,
+          "display_name": "SubTotal",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8b0721d4-fa83-4295-bd8b-a590dec7cdc0",
+          "is_selected": true,
+          "display_name": "TaxAmt",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "15555da9-2fa6-4815-b24c-590f27260433",
+          "is_selected": true,
+          "display_name": "TotalDue",
+          "type": "semantic_model.column",
+          "data_type": "Decimal",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1bd0aa2a-5557-41e2-832b-642bd7f9ca2c",
+      "is_selected": false,
+      "display_name": "SalesLT vGetAllCategories",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "76616d31-fb08-4c65-987e-526bb45c752c",
+          "is_selected": true,
+          "display_name": "ParentProductCategoryName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5871adea-51d1-4a48-ba54-5d1f214c43d3",
+          "is_selected": true,
+          "display_name": "ProductCategoryID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0e7f6bde-ace2-4804-8a21-816b50ab1725",
+          "is_selected": true,
+          "display_name": "ProductCategoryName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "3c2fdf91-1e2f-4ee4-8156-f8e6d2bf23f0",
+      "is_selected": false,
+      "display_name": "SalesLT vProductAndDescription",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "e0667713-f6af-407f-beef-f224809fa2fc",
+          "is_selected": true,
+          "display_name": "Culture",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "16d6d4e6-e8f3-4d25-978f-5587c59ae935",
+          "is_selected": true,
+          "display_name": "Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "648d8016-95be-4fe5-bac1-dd1bca93e02c",
+          "is_selected": true,
+          "display_name": "Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8ef0c2c4-50eb-41b1-a3c0-efc01a7f6aa6",
+          "is_selected": true,
+          "display_name": "ProductID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "18b649ca-d983-416a-a927-c1356b2a79e9",
+          "is_selected": true,
+          "display_name": "ProductModel",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "8ccbb217-3629-4c01-bf58-56e779e5961d",
+      "is_selected": false,
+      "display_name": "SalesLT vProductModelCatalogDescription",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "4f28edc7-5342-421d-9225-d431b446e023",
+          "is_selected": true,
+          "display_name": "BikeFrame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dbd4d7b2-3699-46b6-84fa-5170f43a0be2",
+          "is_selected": true,
+          "display_name": "Color",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9660c80a-c198-4e62-b7da-726a4bf88be9",
+          "is_selected": true,
+          "display_name": "Copyright",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4c6dadf3-f10f-4da1-89f0-02c23a3672aa",
+          "is_selected": true,
+          "display_name": "Crankset",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "84ccf218-83bd-4842-8730-577540425b50",
+          "is_selected": true,
+          "display_name": "MaintenanceDescription",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "88b9ade3-c106-4f6f-a8ea-5b604ae9cbda",
+          "is_selected": true,
+          "display_name": "Manufacturer",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eb55ff6c-89fe-41e7-ab27-520842bd2f68",
+          "is_selected": true,
+          "display_name": "Material",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3214dd55-91cb-4560-b9e2-ba625f7c0725",
+          "is_selected": true,
+          "display_name": "ModifiedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "43fe01b0-fb8f-4ab5-85f1-48db0d321ffa",
+          "is_selected": true,
+          "display_name": "Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cbce32b3-0401-42a7-bdeb-215eb64624ab",
+          "is_selected": true,
+          "display_name": "NoOfYears",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51e23a53-0f2c-44ff-ab36-bc8c73e25cf2",
+          "is_selected": true,
+          "display_name": "Pedal",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a633e337-e183-4490-a91a-1c885ca84f33",
+          "is_selected": true,
+          "display_name": "PictureAngle",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6b17b145-7b1e-42eb-8c0f-4c2eecc8a1e8",
+          "is_selected": true,
+          "display_name": "PictureSize",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8dba8224-75ca-4f39-ad6c-32dcebe0569e",
+          "is_selected": true,
+          "display_name": "ProductLine",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8fbc74d6-b79f-4bc5-b063-ad43f2df9f69",
+          "is_selected": true,
+          "display_name": "ProductModelID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0eb0811b-0692-4ae8-806b-e4bd59cb6cfb",
+          "is_selected": true,
+          "display_name": "ProductPhotoID",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b274056e-d8eb-4f8b-b203-4c2e5c3d06cc",
+          "is_selected": true,
+          "display_name": "ProductURL",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7e2c9de7-4a41-48b4-b8ee-7a43cabd0c88",
+          "is_selected": true,
+          "display_name": "RiderExperience",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a067c0fc-301f-4c39-9dca-81d5d7a5dd8f",
+          "is_selected": true,
+          "display_name": "rowguid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c19b5656-db34-449c-b7a5-93912e5a4a82",
+          "is_selected": true,
+          "display_name": "Saddle",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e7a8d8c1-d9c3-4313-9bd5-9a3834dcc60e",
+          "is_selected": true,
+          "display_name": "Style",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "21538a6c-f06b-4274-9665-2cb6f106aeee",
+          "is_selected": true,
+          "display_name": "Summary",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fb13c9a6-f90d-4ecf-8cc9-d16bc8068a76",
+          "is_selected": true,
+          "display_name": "WarrantyDescription",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5f1b3aa3-5df8-4c46-95e4-47d4a1ca60f1",
+          "is_selected": true,
+          "display_name": "WarrantyPeriod",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f847df59-b326-4d22-8e01-8c3fba4c84de",
+          "is_selected": true,
+          "display_name": "Wheel",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}
