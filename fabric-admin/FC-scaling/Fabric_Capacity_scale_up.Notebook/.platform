@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Fabric_Capacity_scale_up"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1bd2592d-e11e-8291-4b41-407d880c146f"
+  }
+}
