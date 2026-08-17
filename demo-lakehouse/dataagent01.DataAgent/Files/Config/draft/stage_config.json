@@ -1,0 +1,4 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/stageConfiguration/1.0.0/schema.json",
+  "aiInstructions": "The 'AdventureWorksLH' data source contains comprehensive information across three tables:\n\n'dimcustomer' for detailed customer demographics and contact information;\n'dimdate' for date-related data like calendar and fiscal information;\n'dimgeography' for geographical details including city names and country region codes.\n\nUse this data source for queries and analysis involving customer details, time-based events, and geographical information."
+}

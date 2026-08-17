@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "ApacheAirflowJob",
+    "displayName": "apacheairflowjob1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d333c111-d0dd-b2ee-442b-f7963e684b2e"
+  }
+}

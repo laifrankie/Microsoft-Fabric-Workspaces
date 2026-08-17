@@ -1,0 +1,46 @@
+table demoTable
+	lineageTag: ce53f033-ddc5-45aa-b099-1561441a5fd9
+	sourceLineageTag: [dbo].[demoTable]
+
+	column EventProcessedUtcTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 14273563-1ea1-4cce-8762-b660c5b88301
+		sourceLineageTag: EventProcessedUtcTime
+		summarizeBy: none
+		sourceColumn: EventProcessedUtcTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 27f3fde8-d7cb-4b14-8abb-b8b912bbd457
+		sourceLineageTag: PartitionId
+		summarizeBy: sum
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column EventEnqueuedUtcTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9412855a-a576-4a65-817d-69a3ce2b471c
+		sourceLineageTag: EventEnqueuedUtcTime
+		summarizeBy: none
+		sourceColumn: EventEnqueuedUtcTime
+
+		annotation SummarizationSetBy = Automatic
+
+	partition demoTable-6d0c400c-c836-414a-86fb-7c7bfd92a033 = entity
+		mode: directLake
+		source
+			entityName: demoTable
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

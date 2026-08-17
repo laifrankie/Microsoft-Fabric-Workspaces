@@ -1,0 +1,168 @@
+table sales
+	lineageTag: 5a2c2a95-212d-42e7-b850-476881d6167a
+	sourceLineageTag: [dbo].[sales]
+
+	column Segment
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 054bcc7f-804e-47b7-8ca9-21f8b3beb75e
+		sourceLineageTag: Segment
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 13bb49bc-5ced-4514-8253-dda6d8a37c09
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b9d27ffa-0368-4dcd-b43f-857a642fb6ea
+		sourceLineageTag: Product
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitsSold
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f813bf40-cfa8-4a59-8370-199d9cd99d86
+		sourceLineageTag: UnitsSold
+		summarizeBy: sum
+		sourceColumn: UnitsSold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SalePrice
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5ca0d29a-cba2-494e-abb3-caa7fbf50ac2
+		sourceLineageTag: SalePrice
+		summarizeBy: sum
+		sourceColumn: SalePrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrossSales
+		dataType: double
+		sourceProviderType: float
+		lineageTag: cd2e4305-00e8-4822-98a5-6fc14e1860bf
+		sourceLineageTag: GrossSales
+		summarizeBy: sum
+		sourceColumn: GrossSales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Discounts
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1fa2e9b1-1850-4fc0-bd06-d3ab0c68e74e
+		sourceLineageTag: Discounts
+		summarizeBy: sum
+		sourceColumn: Discounts
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sales
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1e285289-f9d6-40e3-9a65-7030910ddc15
+		sourceLineageTag: Sales
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COGS
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ef1a2fdb-cce3-4d9a-9f65-ae038fe4f698
+		sourceLineageTag: COGS
+		summarizeBy: sum
+		sourceColumn: COGS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 0cf55f99-52a2-4b57-b709-ff4b51b8cdfa
+		sourceLineageTag: Profit
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2eedaee5-edfb-4f86-a4d1-6f3e7e3cb5dd
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 18f4aff9-4b9a-40e7-8f66-05606290d5bf
+		sourceLineageTag: MonthNumber
+		summarizeBy: sum
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8f51ac79-767d-4163-9926-56148eae19ad
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f474fce8-704c-4bce-86dc-a90d618bab31
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sales-d8603793-3e29-46f9-9ea6-3b805f4ccf60 = entity
+		mode: directLake
+		source
+			entityName: sales
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+
