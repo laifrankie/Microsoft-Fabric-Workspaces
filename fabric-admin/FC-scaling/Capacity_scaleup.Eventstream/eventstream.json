@@ -1,12 +1,12 @@
 {
   "sources": [
     {
-      "id": "c34e56fa-834b-4912-a930-4525b75b9475",
-      "name": "Fabric-capacity-events",
+      "id": "9853bdb8-6e78-4848-9517-113a77359c73",
+      "name": "capacity-utilization",
       "type": "FabricCapacityOverviewEvents",
       "properties": {
         "eventScope": "Capacity",
-        "capacityId": "f29011ce-9aeb-403d-a17c-40c8ed4aab68",
+        "capacityId": "fde5b6be-546a-42e5-98e4-cf592d6a51a5",
         "includedEventTypes": [
           "Microsoft.Fabric.Capacity.Summary"
         ],
@@ -52,7 +52,7 @@
       "properties": {},
       "inputNodes": [
         {
-          "name": "Fabric-capacity-events"
+          "name": "capacity-utilization"
         }
       ]
     }
