@@ -1,0 +1,309 @@
+{
+  "sources": [
+    {
+      "id": "c34e56fa-834b-4912-a930-4525b75b9475",
+      "name": "Fabric-capacity-events",
+      "type": "FabricCapacityOverviewEvents",
+      "properties": {
+        "eventScope": "Capacity",
+        "capacityId": "f29011ce-9aeb-403d-a17c-40c8ed4aab68",
+        "includedEventTypes": [
+          "Microsoft.Fabric.Capacity.Summary"
+        ],
+        "filters": []
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "id": "ce3523ce-d5a7-4cbf-906f-f75b9df18c52",
+      "name": "Capacity-Activator",
+      "type": "Activator",
+      "properties": {
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "c3988991-49cf-a965-41ae-632198162d56",
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "Calculate_capacity_utilization"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "Calculate_capacity_utilization",
+          "schema": {
+            "columns": []
+          }
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "01f99981-bdc9-488a-b817-06de6d9a22d3",
+      "name": "Capacityscaleup-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "Fabric-capacity-events"
+        }
+      ]
+    }
+  ],
+  "operators": [
+    {
+      "name": "Calculate_capacity_utilization",
+      "type": "SQL",
+      "inputNodes": [
+        {
+          "name": "Capacityscaleup-stream"
+        }
+      ],
+      "properties": {
+        "query": "WITH u AS (\n SELECT \n  data.capacityId       AS capacityId, \n  data.capacityName     AS capacityName, \n  data.capacitySku      AS capacitySku, \n  data.windowStartTime  AS windowStartTime, \n  data.windowEndTime    AS windowEndTime, \n  CAST(data.baseCapacityUnits AS float) AS baseCapacityUnits, \n  CAST(data.capacityUnitMs     AS float) AS capacityUnitMs, \n  CAST( \n   CAST(data.capacityUnitMs AS float) / \n   NULLIF( \n    CAST(data.baseCapacityUnits AS float) * \n    DATEDIFF(millisecond, data.windowStartTime, data.windowEndTime), \n    0 \n    ) AS float \n  ) AS utilization \n FROM [Capacityscaleup-stream] \n)\nSELECT\n u.capacityId, \n u.capacityName, \n u.capacitySku, \n u.windowStartTime, \n u.windowEndTime, \n u.baseCapacityUnits, \n u.capacityUnitMs, \n u.utilization \nINTO [Capacity-Activator] \nFROM u;\n",
+        "advancedSettings": null
+      },
+      "inputSchemas": [
+        {
+          "name": "Capacityscaleup-stream",
+          "schema": {
+            "columns": [
+              {
+                "name": "time",
+                "type": "DateTime",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "dataschemaversion",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "specversion",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "subject",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "id",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "source",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "type",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "data",
+                "type": "Record",
+                "fields": [
+                  {
+                    "name": "tenantId",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "capacityId",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "capacityName",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "capacitySku",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "capacityRegion",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "windowStartTime",
+                    "type": "DateTime",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "windowEndTime",
+                    "type": "DateTime",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "baseCapacityUnits",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "capacityUnitMs",
+                    "type": "Float",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "interactiveDelayThresholdPercentage",
+                    "type": "Float",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "interactiveRejectionThresholdPercentage",
+                    "type": "Float",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "backgroundRejectionThresholdPercentage",
+                    "type": "Float",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "overageTotalCapacityUnitMs",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "overageAddCapacityUnitMs",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "overageBurndownCapacityUnitMs",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "utilizationBackground",
+                    "type": "Float",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "utilizationInteractive",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "utilizationBackgroundPreview",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "utilizationInteractivePreview",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "processedOverageCapacityUnitsMs",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "capacityUnitUtilizationBreakdown",
+                    "type": "Array",
+                    "fields": null,
+                    "items": {
+                      "name": null,
+                      "type": "Record",
+                      "fields": [
+                        {
+                          "name": "WorkloadKind",
+                          "type": "Nvarchar(max)",
+                          "fields": null,
+                          "items": null
+                        },
+                        {
+                          "name": "Utilization",
+                          "type": "Record",
+                          "fields": [
+                            {
+                              "name": "Background",
+                              "type": "Float",
+                              "fields": null,
+                              "items": null
+                            }
+                          ],
+                          "items": null
+                        }
+                      ],
+                      "items": null
+                    }
+                  },
+                  {
+                    "name": "overageBillingLimitCapacityUnitsMs",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "overageBillingProtectionActive",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "rollingProcessedOverageCapacityUnitsMs",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "rollingProcessedOverageStartTime",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  }
+                ],
+                "items": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "compatibilityLevel": "1.1"
+}

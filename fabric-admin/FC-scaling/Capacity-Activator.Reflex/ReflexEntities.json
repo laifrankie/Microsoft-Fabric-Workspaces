@@ -1,0 +1,121 @@
+[
+  {
+    "uniqueIdentifier": "ce3523ce-d5a7-4cbf-906f-f75b9df18c52",
+    "payload": {
+      "name": "EventStream",
+      "metadata": {
+        "eventstreamArtifactId": "35f6efec-fe60-4ccf-aac4-c96c26a601d3"
+      }
+    },
+    "type": "eventstreamSource-v1"
+  },
+  {
+    "uniqueIdentifier": "bc093e6a-5889-4c07-b1e4-4b6211569f26",
+    "payload": {
+      "name": "Capacity_scaleup-stream",
+      "definition": {
+        "type": "Event",
+        "instance": "{\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"SourceEventStep\",\"id\":\"56f76ae1-b0bf-4ae5-9e25-63747a66f094\",\"rows\":[{\"name\":\"SourceSelector\",\"kind\":\"SourceReference\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"ce3523ce-d5a7-4cbf-906f-f75b9df18c52\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "de55bd55-84f8-4f2b-812a-7674e11fbdd7",
+    "payload": {
+      "name": "Fabric Capacity",
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "45db2df0-1940-43e1-9dc0-d8527e386a1d",
+    "payload": {
+      "name": "capacityName",
+      "parentObject": {
+        "targetUniqueIdentifier": "de55bd55-84f8-4f2b-812a-7674e11fbdd7"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"329b61ef-eaf2-42d4-a307-2e0033182693\",\"name\":\"IdPartStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.2.3\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "d3778374-fcee-4fcd-b9dc-47163d650b84",
+    "payload": {
+      "name": "capacityName",
+      "parentObject": {
+        "targetUniqueIdentifier": "de55bd55-84f8-4f2b-812a-7674e11fbdd7"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"48ef9873-002d-4baf-bb85-f5085c49cb4f\",\"name\":\"IdStructureStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"45db2df0-1940-43e1-9dc0-d8527e386a1d\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"IdPart\",\"name\":\"IdPart\"}]}],\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.2.3\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "e0060d03-ecc8-4be1-9d19-a479c2207e75",
+    "payload": {
+      "name": "Capacity_scaleup-stream",
+      "parentObject": {
+        "targetUniqueIdentifier": "de55bd55-84f8-4f2b-812a-7674e11fbdd7"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"9eb42031-34bd-4bae-9ba3-f3bd01fffe40\",\"name\":\"SplitEventStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"bc093e6a-5889-4c07-b1e4-4b6211569f26\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"capacityName\"},{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"45db2df0-1940-43e1-9dc0-d8527e386a1d\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"FieldIdMapping\",\"name\":\"FieldIdMapping\"},{\"arguments\":[{\"name\":\"isAuthoritative\",\"type\":\"boolean\",\"value\":true}],\"kind\":\"EventOptions\",\"name\":\"SplitEventOptions\"}]}],\"templateId\":\"SplitEvent\",\"templateVersion\":\"1.2.3\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "6bae2611-b69d-4c57-a1e9-a0a57d6b4d87",
+    "payload": {
+      "name": "utilization",
+      "parentObject": {
+        "targetUniqueIdentifier": "de55bd55-84f8-4f2b-812a-7674e11fbdd7"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"8c9459ff-d19b-4345-aaf8-c064a10d21f7\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"e0060d03-ecc8-4be1-9d19-a479c2207e75\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"utilization\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"eb33ecf2-94fe-41ec-8931-906e218c07ce\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Number\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.3\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "9a0a8d43-46c0-424e-8893-2b808259a8ad",
+    "payload": {
+      "name": "utilization alert",
+      "parentObject": {
+        "targetUniqueIdentifier": "de55bd55-84f8-4f2b-812a-7674e11fbdd7"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.2.3\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"b66f5ff6-98ff-4e3f-b22c-8477bef5a9f0\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"6bae2611-b69d-4c57-a1e9-a0a57d6b4d87\"}],\"name\":\"attribute\"}]},{\"name\":\"NumberSummary\",\"kind\":\"NumberSummary\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Average\"},{\"kind\":\"TimeDrivenWindowSpec\",\"type\":\"complex\",\"arguments\":[{\"name\":\"width\",\"type\":\"timeSpan\",\"value\":600000.0}],\"name\":\"window\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"cf4a5a4c-4c43-4f7b-81de-f483856d0776\",\"rows\":[{\"name\":\"NumberValueCondition\",\"kind\":\"NumberValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsGreaterThan\"},{\"name\":\"threshold\",\"type\":\"number\",\"value\":0.8}]},{\"name\":\"SustainedPeriodOption\",\"kind\":\"SustainedPeriodOption\",\"arguments\":[{\"name\":\"period\",\"type\":\"timeSpan\",\"value\":600000.0}]}]},{\"name\":\"ActStep\",\"id\":\"0035a620-eb64-4c59-8565-6bee6e35a7f4\",\"rows\":[{\"name\":\"FabricItemBinding\",\"kind\":\"FabricItemInvocation\",\"arguments\":[{\"name\":\"fabricJobConnectionDocumentId\",\"type\":\"string\",\"value\":\"3c8b70e8-40d8-48c7-b6df-0d93985f155c\"},{\"name\":\"parameters\",\"type\":\"array\",\"values\":[]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]},{\"name\":\"workspaceId\",\"type\":\"string\",\"value\":\"00000000-0000-0000-0000-000000000000\"},{\"name\":\"itemId\",\"type\":\"string\",\"value\":\"1bd2592d-e11e-8291-4b41-407d880c146f\"},{\"name\":\"itemType\",\"type\":\"string\",\"value\":\"SynapseNotebook\"},{\"name\":\"jobType\",\"type\":\"string\",\"value\":\"RunNotebook\"}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false,
+          "delayToleranceMs": 120000
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "3c8b70e8-40d8-48c7-b6df-0d93985f155c",
+    "payload": {
+      "name": "Fabric item action",
+      "fabricItem": {
+        "itemId": "1bd2592d-e11e-8291-4b41-407d880c146f",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemType": "SynapseNotebook"
+      },
+      "jobType": "RunNotebook"
+    },
+    "type": "fabricItemAction-v1"
+  }
+]

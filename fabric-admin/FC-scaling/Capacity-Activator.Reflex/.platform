@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Reflex",
+    "displayName": "Capacity-Activator"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c3988991-49cf-a965-41ae-632198162d56"
+  }
+}
